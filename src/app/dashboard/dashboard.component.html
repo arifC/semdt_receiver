@@ -1,0 +1,52 @@
+<div class="grid-container">
+  <h1 class="center mat-h1">DementAI Health Care</h1>
+  <mat-grid-list cols="2" rowHeight="280px">
+    <!-- Overview -->
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            <h3>Overview</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>Card Content Here</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <!-- Barbara -->
+    <mat-grid-tile [colspan]="1" [rowspan]="2">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            <h3>Patient: Barbara Müller</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content *ngIf="!collapsed" class="dashboard-card-content">
+          <div>Card Content Here</div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button>Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+
+    <!-- Irmgard -->
+    <mat-grid-tile [colspan]="1" [rowspan]="2">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            <h3>Patient: Irmgard Schneider</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content *ngIf="!collapsed" class="dashboard-card-content">
+          <div>Card Content Here</div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button>Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
