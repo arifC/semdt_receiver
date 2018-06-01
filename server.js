@@ -28,7 +28,7 @@ app.get('*', (req, res) => {
 
 app.post('/api/irmgard', function (req, res) {
     if (req.body.counter) {
-        console.log(req.body.counter);
+        
     }
     return res.json("{'success': 'true'}");
 });

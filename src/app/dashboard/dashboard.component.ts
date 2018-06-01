@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'dashboard',
@@ -6,23 +7,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+
+  constructor(public http:HttpClient) {}
+
   collapsed:boolean = false;
+  irmgard:any = {};
+  barbara:any = {};
 
-  cards = [
-    { title: 'Overview', cols: 2, rows: 1 },
-    { title: 'Patient: Barbara Müller', cols: 1, rows: 2 },
-    { title: 'Patient: Irmgard Schneider', cols: 1, rows: 2 }
-  ];
-
-  irmgard = {
-    "Status": "sleeping",
-    "Mental Health (today)": "unknown",
-    "Logs" : "Irmgard did not wake up yet."
+  ngAfterViewInit() {
+    this.irmgardInit();
+    this.barbaraInit();
   }
 
-  barbara = {
-    "Status": "sleeping",
-    "Mental Health (today)": "unknown",
-    "Logs" : "Barbara did not wake up yet."
+  irmgardInit() {
+    this.http.get('assets/irmgard.json').subscribe((res) => {
+      this.irmgard = res;
+    });
+  } 
+
+  barbaraInit() {
+    this.http.get('assets/barbara.json').subscribe((res) => {
+      this.barbara = res;
+      console.log(this.barbara);
+    });
   }
 }
