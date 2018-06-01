@@ -1,8 +1,8 @@
 <div class="grid-container">
-  <h1 class="center mat-h1">DementAI Health Care</h1>
-  <mat-grid-list cols="2" rowHeight="280px">
+  <h1 class="center mat-h1">DementAI Health Care Dashboard</h1>
+  <mat-grid-list cols="2" rowHeight="230px">
     <!-- Overview -->
-    <mat-grid-tile [colspan]="2" [rowspan]="1">
+    <mat-grid-tile [colspan]="2" [rowspan]="2">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
@@ -10,7 +10,75 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+          <mat-tab-group>
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon>local_hotel</mat-icon>
+              </ng-template>
+              <div class="demo-tab-content">
+                <h2>Status</h2>
+                <mat-progress-bar style="margin-top: 50px" mode="determinate" value="75"></mat-progress-bar>
+                <br/>
+                <mat-chip-list>
+                  <mat-chip selected="true" color="primary">Awake: 325</mat-chip>
+                  <mat-chip selected="true" color="warn">Sleeping: 79</mat-chip>
+                </mat-chip-list>
+              </div>
+            </mat-tab>
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon>local_hospital</mat-icon>
+              </ng-template>
+              <div class="demo-tab-content">
+                <h2>Health Status</h2>
+                <p>Display health info</p>
+              </div>
+            </mat-tab>
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <p>
+                  <mat-icon matBadge="2" matBadgeColor="warn">notifications_active</mat-icon>
+                </p>
+              </ng-template>
+              <div class="demo-tab-content">
+                <h2>Service Requests</h2>
+                <mat-list>
+                  <mat-list-item>
+                    <mat-icon mat-list-icon>person</mat-icon>
+                    <h4 mat-line>Gertrud von Storch</h4>
+                    <p mat-line>Has a very bad headache today.</p>
+                    <button mat-list-button mat-raised-button color="primary">Assign</button>
+                  </mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item>
+                    <mat-icon mat-list-icon>person</mat-icon>
+                    <h4 mat-line>Siegfried Seehofer</h4>
+                    <p mat-line>Likes to have a meal before lunch.</p>
+                    <button mat-list-button mat-raised-button color="primary">Assign</button>
+                  </mat-list-item>
+                </mat-list>
+              </div>
+            </mat-tab>
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon>save_alt</mat-icon>
+              </ng-template>
+              <div class="demo-tab-content">
+                <h2>Reports</h2>
+                <button mat-raised-button style="margin: 10px" color="primary">Export Daily Report
+                  <mat-icon>assignment</mat-icon>
+                </button>
+                <br/>
+                <button mat-raised-button style="margin: 10px" color="secondary">Export Station Report
+                  <mat-icon>people</mat-icon>
+                </button>
+                <br/>
+                <button mat-raised-button style="margin: 10px" color="secondary">Export Individual Patient Report
+                  <mat-icon>person</mat-icon>
+                </button>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

@@ -21,5 +21,14 @@
 }
 
 .center {
-  text-align: center;
+  align-content: center;
+}
+
+.demo-tab-content {
+  padding: 16px;
+}
+
+.mat-list-item {
+  margin: auto;
+  width: 900px;
 }

@@ -26,6 +26,19 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
+app.post('/api/irmgard', function (req, res) {
+    if (req.body.counter) {
+        console.log(req.body.counter);
+    }
+    return res.json("{'success': 'true'}");
+});
+
+app.post('/api/barbara', function (req, res) {
+    if (req.body.counter) {
+        console.log(req.body.counter);
+    }
+    return res.json("{'success': 'true'}");
+});
 //Set Port
 const port = process.env.PORT || '3000';
 app.set('port', port);
