@@ -8,15 +8,19 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DashboardComponent {
 
-  constructor(public http:HttpClient) {}
+  constructor(public http:HttpClient) {
+    setInterval(() => {
+      this.irmgardInit();
+      this.rudolfInit();
+    }, 3000);
+  }
 
-  collapsed:boolean = false;
   irmgard:any = {};
-  barbara:any = {};
+  rudolf:any = {};
 
   ngAfterViewInit() {
     this.irmgardInit();
-    this.barbaraInit();
+    this.rudolfInit();
   }
 
   irmgardInit() {
@@ -25,10 +29,9 @@ export class DashboardComponent {
     });
   } 
 
-  barbaraInit() {
-    this.http.get('assets/barbara.json').subscribe((res) => {
-      this.barbara = res;
-      console.log(this.barbara);
+  rudolfInit() {
+    this.http.get('assets/rudolf.json').subscribe((res) => {
+      this.rudolf = res;
     });
   }
 }

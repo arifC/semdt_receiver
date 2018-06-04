@@ -1,6 +1,6 @@
 <div class="grid-container">
-  <h1 class="center mat-h1">DementAI Health Care Dashboard</h1>
-  <mat-grid-list cols="2" rowHeight="240px">
+  <h1 style="text-align: center;" class="mat-h1">Kursana Artificial Intelligence System</h1>
+  <mat-grid-list cols="2" rowHeight="210px">
     <!-- Overview -->
     <mat-grid-tile [colspan]="2" [rowspan]="2">
       <mat-card class="dashboard-card">
@@ -16,7 +16,7 @@
                 <mat-icon>local_hotel</mat-icon>
               </ng-template>
               <div class="demo-tab-content">
-                <h2>Status</h2>
+                <h2>Patients</h2>
                 <mat-progress-bar style="margin-top: 50px" mode="determinate" value="75"></mat-progress-bar>
                 <br/>
                 <mat-chip-list>
@@ -31,7 +31,12 @@
               </ng-template>
               <div class="demo-tab-content">
                 <h2>Health Status</h2>
-                <p>Display health info</p>
+                <mat-progress-bar style="margin-top: 50px" mode="determinate" value="85"></mat-progress-bar>
+                <br/>
+                <mat-chip-list>
+                  <mat-chip selected="true" color="primary">Oriented: 340</mat-chip>
+                  <mat-chip selected="true" color="warn">Disoriented: 34</mat-chip>
+                </mat-chip-list>
               </div>
             </mat-tab>
             <mat-tab>
@@ -83,20 +88,21 @@
       </mat-card>
     </mat-grid-tile>
 
-    <!-- Barbara -->
+    <!-- Rudolf -->
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-card class="dashboard-card">
         <mat-card-header class="patient-header">
-          <img class="patient-image" mat-card-avatar src="/assets/imgs/barbara.jpg" alt="Photo of Barbara">
+          <img class="patient-image" mat-card-avatar src="/assets/imgs/rudolf.jpg" alt="Photo of Barbara">
           <mat-card-title style="margin-left: 10px;">
-            <h2>Patient: Barbara Müller</h2>
+            <h2>Patient: Rudolf Müller</h2>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content *ngIf="!collapsed" class="patient-chips dashboard-card-content">
-            <mat-chip-list>
-              <mat-chip color="primary" selected="true"><mat-icon>alarm</mat-icon> Awake</mat-chip>
-              <mat-chip color="warn" selected="true"><mat-icon>mood_bad</mat-icon> Depressed</mat-chip>
-            </mat-chip-list>
+        <mat-card-content class="patient-chips dashboard-card-content">
+          <mat-chip-list>
+            <mat-chip *ngIf="!rudolf.sleeping" color="primary" selected="true"><mat-icon>alarm</mat-icon> Awake</mat-chip>
+            <mat-chip *ngIf="rudolf.sleeping" color="warn" selected="true"><mat-icon>alarm</mat-icon> Sleeping</mat-chip>
+            <mat-chip *ngIf="!rudolf.sleeping && rudolf.checked" color="warn" selected="true"><mat-icon>mood_bad</mat-icon> Disoriented</mat-chip>
+          </mat-chip-list>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -110,11 +116,44 @@
             <h2>Patient: Irmgard Schneider</h2>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content *ngIf="!collapsed" class="patient-chips dashboard-card-content">
-            <mat-chip-list>
-              <mat-chip color="primary" selected="true"><mat-icon>alarm</mat-icon> Awake</mat-chip>
-              <mat-chip color="primary" selected="true"><mat-icon>mood</mat-icon> Oriented</mat-chip>
-            </mat-chip-list>
+        <mat-card-content class="patient-chips dashboard-card-content">
+          <mat-chip-list>
+            <mat-chip *ngIf="!irmgard.sleeping" color="primary" selected="true"><mat-icon>alarm</mat-icon> Awake</mat-chip>
+            <mat-chip *ngIf="irmgard.sleeping" color="warn" selected="true"><mat-icon>alarm</mat-icon> Sleeping</mat-chip>
+            <mat-chip *ngIf="!irmgard.sleeping && irmgard.checked" color="primary" selected="true"><mat-icon>mood</mat-icon> Oriented</mat-chip>
+          </mat-chip-list>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header class="patient-header">
+          <mat-icon mat-card-avatar class="avatar-icon">person_outline</mat-icon>
+          <mat-card-title style="margin-left: 10px;">
+            <h2>Patient: Holger Schmidt</h2>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="patient-chips dashboard-card-content">
+          <mat-chip-list>
+            <mat-chip color="warn" selected="true"><mat-icon>alarm</mat-icon> Sleeping</mat-chip>
+          </mat-chip-list>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header class="patient-header">
+          <mat-icon mat-card-avatar class="avatar-icon">person_outline</mat-icon>
+          <mat-card-title style="margin-left: 10px;">
+            <h2>Patient: Barbara Reiter</h2>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="patient-chips dashboard-card-content">
+          <mat-chip-list>
+            <mat-chip color="warn" selected="true"><mat-icon>alarm</mat-icon> Sleeping</mat-chip>
+          </mat-chip-list>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
