@@ -1,6 +1,6 @@
 <div class="grid-container">
   <h1 class="center mat-h1">DementAI Health Care Dashboard</h1>
-  <mat-grid-list cols="2" rowHeight="230px">
+  <mat-grid-list cols="2" rowHeight="240px">
     <!-- Overview -->
     <mat-grid-tile [colspan]="2" [rowspan]="2">
       <mat-card class="dashboard-card">
@@ -65,15 +65,15 @@
               </ng-template>
               <div class="demo-tab-content">
                 <h2>Reports</h2>
-                <button mat-raised-button style="margin: 10px" color="primary">Export Daily Report
+                <button mat-raised-button style="width: 260px; margin: 5px" color="primary">Export Daily Report
                   <mat-icon>assignment</mat-icon>
                 </button>
                 <br/>
-                <button mat-raised-button style="margin: 10px" color="secondary">Export Station Report
+                <button mat-raised-button style="width: 260px; margin: 5px" color="warn">Export Station Report
                   <mat-icon>people</mat-icon>
                 </button>
                 <br/>
-                <button mat-raised-button style="margin: 10px" color="secondary">Export Individual Patient Report
+                <button mat-raised-button style="width: 260px; margin: 5px" color="secondary">Export Individual Patient Report
                   <mat-icon>person</mat-icon>
                 </button>
               </div>
@@ -84,36 +84,38 @@
     </mat-grid-tile>
 
     <!-- Barbara -->
-    <mat-grid-tile [colspan]="1" [rowspan]="2">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            <h3>Patient: Barbara Müller</h3>
+        <mat-card-header class="patient-header">
+          <img class="patient-image" mat-card-avatar src="/assets/imgs/barbara.jpg" alt="Photo of Barbara">
+          <mat-card-title style="margin-left: 10px;">
+            <h2>Patient: Barbara Müller</h2>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content *ngIf="!collapsed" class="dashboard-card-content">
-          <div>Anzahl {{barbara.Counter}}</div>
+        <mat-card-content *ngIf="!collapsed" class="patient-chips dashboard-card-content">
+            <mat-chip-list>
+              <mat-chip color="primary" selected="true"><mat-icon>alarm</mat-icon> Awake</mat-chip>
+              <mat-chip color="warn" selected="true"><mat-icon>mood_bad</mat-icon> Depressed</mat-chip>
+            </mat-chip-list>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button>Details</button>
-        </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
 
     <!-- Irmgard -->
-    <mat-grid-tile [colspan]="1" [rowspan]="2">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
       <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            <h3>Patient: Irmgard Schneider</h3>
+        <mat-card-header class="patient-header">
+          <img class="patient-image" mat-card-avatar src="/assets/imgs/irmgard.jpg" alt="Photo of Irmgard">
+          <mat-card-title style="margin-left: 10px;">
+            <h2>Patient: Irmgard Schneider</h2>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content *ngIf="!collapsed" class="dashboard-card-content">
-          <div>Card Content Here</div>
+        <mat-card-content *ngIf="!collapsed" class="patient-chips dashboard-card-content">
+            <mat-chip-list>
+              <mat-chip color="primary" selected="true"><mat-icon>alarm</mat-icon> Awake</mat-chip>
+              <mat-chip color="primary" selected="true"><mat-icon>mood</mat-icon> Oriented</mat-chip>
+            </mat-chip-list>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button>Details</button>
-        </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
