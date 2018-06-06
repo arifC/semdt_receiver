@@ -94,14 +94,18 @@
         <mat-card-header class="patient-header">
           <img class="patient-image" mat-card-avatar src="/assets/imgs/rudolf.jpg" alt="Photo of Barbara">
           <mat-card-title style="margin-left: 10px;">
+            <label>Raum 1501</label>
             <h2>Patient: Rudolf Müller</h2>
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="patient-chips dashboard-card-content">
           <mat-chip-list>
-            <mat-chip *ngIf="!rudolf.sleeping" color="primary" selected="true"><mat-icon>alarm</mat-icon> Awake</mat-chip>
-            <mat-chip *ngIf="rudolf.sleeping" color="warn" selected="true"><mat-icon>alarm</mat-icon> Sleeping</mat-chip>
-            <mat-chip *ngIf="!rudolf.sleeping && rudolf.checked" color="warn" selected="true"><mat-icon>mood_bad</mat-icon> Disoriented</mat-chip>
+            <mat-chip *ngIf="!rudolf.sleeping" color="primary" selected="true">
+              <mat-icon>alarm</mat-icon> Awake</mat-chip>
+            <mat-chip *ngIf="rudolf.sleeping" color="warn" selected="true">
+              <mat-icon>alarm</mat-icon> Sleeping</mat-chip>
+            <mat-chip *ngIf="!rudolf.sleeping && rudolf.checked" color="warn" selected="true">
+              <mat-icon>mood_bad</mat-icon> Disoriented</mat-chip>
           </mat-chip-list>
         </mat-card-content>
       </mat-card>
@@ -113,14 +117,18 @@
         <mat-card-header class="patient-header">
           <img class="patient-image" mat-card-avatar src="/assets/imgs/irmgard.jpg" alt="Photo of Irmgard">
           <mat-card-title style="margin-left: 10px;">
+            <label>Raum 1502</label>
             <h2>Patient: Irmgard Schneider</h2>
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="patient-chips dashboard-card-content">
           <mat-chip-list>
-            <mat-chip *ngIf="!irmgard.sleeping" color="primary" selected="true"><mat-icon>alarm</mat-icon> Awake</mat-chip>
-            <mat-chip *ngIf="irmgard.sleeping" color="warn" selected="true"><mat-icon>alarm</mat-icon> Sleeping</mat-chip>
-            <mat-chip *ngIf="!irmgard.sleeping && irmgard.checked" color="primary" selected="true"><mat-icon>mood</mat-icon> Oriented</mat-chip>
+            <mat-chip *ngIf="!irmgard.sleeping" color="primary" selected="true">
+              <mat-icon>alarm</mat-icon> Awake</mat-chip>
+            <mat-chip *ngIf="irmgard.sleeping" color="warn" selected="true">
+              <mat-icon>alarm</mat-icon> Sleeping</mat-chip>
+            <mat-chip *ngIf="!irmgard.sleeping && irmgard.checked" color="primary" selected="true">
+              <mat-icon>mood</mat-icon> Oriented</mat-chip>
           </mat-chip-list>
         </mat-card-content>
       </mat-card>
@@ -131,12 +139,14 @@
         <mat-card-header class="patient-header">
           <mat-icon mat-card-avatar class="avatar-icon">person_outline</mat-icon>
           <mat-card-title style="margin-left: 10px;">
+            <label>Raum 1503</label>
             <h2>Patient: Holger Schmidt</h2>
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="patient-chips dashboard-card-content">
           <mat-chip-list>
-            <mat-chip color="warn" selected="true"><mat-icon>alarm</mat-icon> Sleeping</mat-chip>
+            <mat-chip color="warn" selected="true">
+              <mat-icon>alarm</mat-icon> Sleeping</mat-chip>
           </mat-chip-list>
         </mat-card-content>
       </mat-card>
@@ -147,12 +157,14 @@
         <mat-card-header class="patient-header">
           <mat-icon mat-card-avatar class="avatar-icon">person_outline</mat-icon>
           <mat-card-title style="margin-left: 10px;">
+            <label>Raum 1504</label>
             <h2>Patient: Barbara Reiter</h2>
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="patient-chips dashboard-card-content">
           <mat-chip-list>
-            <mat-chip color="warn" selected="true"><mat-icon>alarm</mat-icon> Sleeping</mat-chip>
+            <mat-chip color="warn" selected="true">
+              <mat-icon>alarm</mat-icon> Sleeping</mat-chip>
           </mat-chip-list>
         </mat-card-content>
       </mat-card>
