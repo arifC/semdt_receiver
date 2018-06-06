@@ -24,8 +24,8 @@ app.use(cors());
 // Send all other requests to the Angular app
 app.get('/api/reset', function (req, res) {
     var fs = require('fs');
-    var fileIrmgardName = './src/assets/irmgard.json';
-    var fileRudolfName = './src/assets/rudolf.json';
+    var fileIrmgardName = '/var/www/html/assets/irmgard.json';
+    var fileRudolfName = '/var/www/html/assets/rudolf.json';
     var fileIrmgard = require(fileIrmgardName);
     var fileRudolf = require(fileRudolfName);
 
