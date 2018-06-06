@@ -51,7 +51,7 @@ app.get('/api/reset', function (req, res) {
 
 app.get('/api/irmgard/wakeup', function (req, res) {
     var fs = require('fs');
-    var fileName = './src/assets/irmgard.json';
+    var fileName = '/var/www/html/assets/irmgard.json';
     var file = require(fileName);
 
     file.sleeping = false;
@@ -67,7 +67,7 @@ app.get('/api/irmgard/wakeup', function (req, res) {
 
 app.get('/api/irmgard/orient', function (req, res) {
     var fs = require('fs');
-    var fileName = './src/assets/irmgard.json';
+    var fileName = '/var/www/html/assets/irmgard.json';
     var file = require(fileName);
 
     file.checked = true;
@@ -83,7 +83,7 @@ app.get('/api/irmgard/orient', function (req, res) {
 
 app.get('/api/rudolf/wakeup', function (req, res) {
     var fs = require('fs');
-    var fileName = './src/assets/rudolf.json';
+    var fileName = '/var/www/html/assets/rudolf.json';
     var file = require(fileName);
 
     file.sleeping = false;
@@ -99,7 +99,7 @@ app.get('/api/rudolf/wakeup', function (req, res) {
 
 app.get('/api/rudolf/orient', function (req, res) {
     var fs = require('fs');
-    var fileName = './src/assets/rudolf.json';
+    var fileName = '/var/www/html/assets/rudolf.json';
     var file = require(fileName);
 
     file.checked = true;
