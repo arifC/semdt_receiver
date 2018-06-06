@@ -22,6 +22,33 @@ app.use(cors());
 //app.use('/api', api);
 
 // Send all other requests to the Angular app
+app.get('/api/reset', function (req, res) {
+    var fs = require('fs');
+    var fileIrmgardName = './src/assets/irmgard.json';
+    var fileRudolfName = './src/assets/rudolf.json';
+    var fileIrmgard = require(fileIrmgardName);
+    var fileRudolf = require(fileRudolfName);
+
+    fileIrmgard.sleeping = true;
+    fileIrmgard.checked = false;
+    fileRudolf.sleeping = true;
+    fileRudolf.checked = false;
+
+    fs.writeFile(fileIrmgardName, JSON.stringify(fileIrmgard), function (err) {
+        if (err) return console.log(err);
+        console.log(JSON.stringify(fileIrmgard));
+        console.log('writing to ' + fileIrmgardName);
+    });
+
+    fs.writeFile(fileRudolfName, JSON.stringify(fileRudolf), function (err) {
+        if (err) return console.log(err);
+        console.log(JSON.stringify(fileRudolf));
+        console.log('writing to ' + fileRudolfName);
+    });
+
+    return res.sendStatus(200);
+});
+
 app.get('/api/irmgard/wakeup', function (req, res) {
     var fs = require('fs');
     var fileName = './src/assets/irmgard.json';
